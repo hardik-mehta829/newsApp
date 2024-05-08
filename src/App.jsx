@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar';
 import Alert from '../src/components/Alert';
 const App = () => {
-  const api = '01bde8b3ffd7474591a1a54327fa7dfe'; //Api key from News api
+  const api = import.meta.env.VITE_APP_API; //Api key from News api
   const [progress, setProgress] = useState(0); //variable to show progress of top loading bar
   const [query, setquery] = useState(''); //variable to store the query of search field
   const [error, seterror] = useState(''); //error variable to store the error if occured
@@ -19,8 +19,6 @@ const App = () => {
           setquery={setquery}
           Category={Category}
           setCategory={setCategory}
-          selectedField={selectedField}
-          setSelectedField={setSelectedField}
         />
         <LoadingBar color='#f11946' progress={progress} height={3} />
         {error && <Alert message={error} />}
@@ -38,7 +36,6 @@ const App = () => {
                   country='in'
                   category='general'
                   seterror={seterror}
-                  selectedField={selectedField}
                 />
               }
             />
@@ -54,7 +51,6 @@ const App = () => {
                   country='in'
                   category='business'
                   seterror={seterror}
-                  selectedField={selectedField}
                 />
               }
             />
@@ -70,7 +66,6 @@ const App = () => {
                   country='in'
                   category='sports'
                   seterror={seterror}
-                  selectedField={selectedField}
                 />
               }
             />
@@ -86,7 +81,6 @@ const App = () => {
                   country='in'
                   category='entertainment'
                   seterror={seterror}
-                  selectedField={selectedField}
                 />
               }
             />
@@ -102,7 +96,6 @@ const App = () => {
                   country='in'
                   category='health'
                   seterror={seterror}
-                  selectedField={selectedField}
                 />
               }
             />
@@ -118,7 +111,6 @@ const App = () => {
                   country='in'
                   category='science'
                   seterror={seterror}
-                  selectedField={selectedField}
                 />
               }
             />
@@ -134,7 +126,6 @@ const App = () => {
                   country='in'
                   category='technology'
                   seterror={seterror}
-                  selectedField={selectedField}
                 />
               }
             />
